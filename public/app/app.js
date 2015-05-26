@@ -7,12 +7,14 @@ var __extends = this.__extends || function (d, b) {
 var plat = require('platypus');
 var HomeViewControl = require('../viewcontrols/home/home.viewcontrol');
 var RegisterViewControl = require('../viewcontrols/register/register.viewcontrol');
+var LoginViewControl = require('../viewcontrols/login/login.viewcontrol');
 var App = (function (_super) {
     __extends(App, _super);
     function App(router) {
         _super.call(this);
         router.configure([
             { pattern: '', view: HomeViewControl },
+            { pattern: '/login', view: LoginViewControl },
             { pattern: '/register', view: RegisterViewControl }
         ]);
     }
