@@ -13,3 +13,25 @@ class LoginViewControl extends BaseViewControl {
         password: '',
         error: ''
     };
+
+    constructor(private userRepository: UserRepository) {
+        super();
+    }
+
+    login() {
+        this.userRepository.login(this.context.email, this.context.password)
+        .then((success) => {
+            this.navigator.navigate(HomeViewControl);
+        }).catch((error) => {
+            this.context.error = error;
+        });
+    }
+
+    register() {
+        this.navigator.navigate(RegisterViewControl);
+    }
+}
+
+plat.register.viewControl('login-vc', LoginViewControl, [UserRepository]);
+
+export = LoginViewControl;
