@@ -3,30 +3,18 @@
 import plat = require('platypus');
 
 import BaseViewControl = require('../base/base.viewcontrol');
-import ProductsService = require('../../services/products/products.service');
-import ConfirmationViewControl = require('../confirmation/confirmation.viewcontrol');
 
-class OrderViewControl extends BaseViewControl {
+class ConfirmationViewControl extends BaseViewControl {
     /**
      * This is the property that indicates where the template HTML for this control exists.
      */
-    templateString: string = require('./order.viewcontrol.html');
+    templateString: string = require('./confirmation.viewcontrol.html');
 
     /**
      * The context variable on a control corresponds to what can be used 
      * for data binding in the view.
      */
-    context: any = {
-    order: <models.IOrder> {
-        productid: 0,
-        address: '',
-        city: '',
-        state: '',
-        zip: '',
-        productsize: ''
-    },
-    error: ''
-    };
+    context: any = { };
 
     /**
      * This is the initialize event method for a control. In this method a control 
@@ -68,9 +56,8 @@ class OrderViewControl extends BaseViewControl {
      * navigator.navigate method on a view control. The parameter corresponds to 
      * an object sent from the previous view control during navigation.
      */
-    navigatedTo(params: { id: string; }, query: any) {
-    this.context.order.productid = params.id;
-}
+    navigatedTo(parameters: any, query: any): void { }
+
     /**
      * This event is fired when you are navigating away from this view control to another 
      * view control.
@@ -83,20 +70,8 @@ class OrderViewControl extends BaseViewControl {
      * listeners.
      */
     dispose(): void { }
-
-    constructor(private productsService: ProductsService) {
-    super();
-    }
-
-    placeOrder() {
-    this.productsService.placeOrder(this.context.order).then((success) => {
-        this.navigator.navigate(ConfirmationViewControl);
-    }).catch((error) => {
-        this.context.error = error;
-    });
-    }
 }
 
-plat.register.viewControl('order-vc', OrderViewControl, [ProductsService]);
+plat.register.viewControl('confirmation-vc', ConfirmationViewControl);
 
-export = OrderViewControl;
+export = ConfirmationViewControl;

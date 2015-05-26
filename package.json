@@ -65,6 +65,12 @@
                 "type": "viewcontrol",
                 "path": "viewcontrols/order",
                 "registeredName": "order-vc"
+            },
+            {
+                "name": "confirmation",
+                "type": "viewcontrol",
+                "path": "viewcontrols/confirmation",
+                "registeredName": "confirmation-vc"
             }
         ],
         "injectables": [],

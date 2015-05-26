@@ -5,6 +5,7 @@ import HomeViewControl = require('../viewcontrols/home/home.viewcontrol');
 import RegisterViewControl = require('../viewcontrols/register/register.viewcontrol');
 import LoginViewControl = require('../viewcontrols/login/login.viewcontrol');
 import OrderViewControl = require('../viewcontrols/order/order.viewcontrol');
+import ConfirmationViewControl = require('../viewcontrols/confirmation/confirmation.viewcontrol');
 
 export class App extends plat.App {
     /**
@@ -18,7 +19,8 @@ export class App extends plat.App {
           { pattern: '', view: HomeViewControl },
           { pattern: '/register', view: RegisterViewControl  },
           { pattern: '/login', view: LoginViewControl },
-          { pattern: '/order/:id', view: OrderViewControl }
+          { pattern: '/order/:id', view: OrderViewControl },
+          { pattern: '/confirmation', view: ConfirmationViewControl }
         ]);
     }
 
