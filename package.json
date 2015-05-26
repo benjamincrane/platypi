@@ -111,6 +111,12 @@
                 "name": "base",
                 "type": "templatecontrol",
                 "path": "common/controls/base"
+            },
+            {
+                "name": "navbar",
+                "type": "templatecontrol",
+                "path": "common/controls/navbar",
+                "registeredName": "navbar-tc"
             }
         ],
         "attributecontrols": [],
