@@ -7,6 +7,7 @@ var __extends = this.__extends || function (d, b) {
 var plat = require('platypus');
 var BaseViewControl = require('../base/base.viewcontrol');
 var UserRepository = require('../../repositories/user/user.repository');
+var OrderViewControl = require('../order/order.viewcontrol');
 var ProductsService = require('../../services/products/products.service');
 var HomeViewControl = (function (_super) {
     __extends(HomeViewControl, _super);
@@ -30,6 +31,9 @@ var HomeViewControl = (function (_super) {
             this.navigator.navigate('login-vc');
             return false;
         }
+    };
+    HomeViewControl.prototype.order = function (id) {
+        this.navigator.navigate(OrderViewControl, { parameters: { id: id } });
     };
     return HomeViewControl;
 })(BaseViewControl);

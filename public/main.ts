@@ -28,3 +28,5 @@ require('./viewcontrols/register/register.viewcontrol');
 require('./viewcontrols/login/login.viewcontrol');
 
 require('./common/controls/navbar/navbar.templatecontrol');
+
+require('./viewcontrols/order/order.viewcontrol');

@@ -3,7 +3,7 @@
 import plat = require('platypus');
 import BaseViewControl = require('../base/base.viewcontrol');
 import UserRepository = require('../../repositories/user/user.repository');
-// import OrderViewControl = require('../order/order.viewcontrol');
+import OrderViewControl = require('../order/order.viewcontrol');
 import ProductsService = require('../../services/products/products.service');
 
 class HomeViewControl extends BaseViewControl {
@@ -26,9 +26,9 @@ class HomeViewControl extends BaseViewControl {
     }
     }
     
-    // order(id: number) {
-    // this.navigator.navigate(OrderViewControl, { parameters: { id: id } });
-    // }
+    order(id: number) {
+    this.navigator.navigate(OrderViewControl, { parameters: { id: id } });
+    }
 
     constructor(private userRepository: UserRepository, private productsService: ProductsService) {
     super();

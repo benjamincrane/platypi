@@ -59,6 +59,12 @@
                 "type": "viewcontrol",
                 "path": "viewcontrols/login",
                 "registeredName": "login-vc"
+            },
+            {
+                "name": "order",
+                "type": "viewcontrol",
+                "path": "viewcontrols/order",
+                "registeredName": "order-vc"
             }
         ],
         "injectables": [],
