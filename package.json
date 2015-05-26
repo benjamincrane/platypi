@@ -74,6 +74,12 @@
                 "name": "base",
                 "type": "repository",
                 "path": "repositories/base"
+            },
+            {
+                "name": "user",
+                "type": "repository",
+                "path": "repositories/user",
+                "registeredName": "user-repo"
             }
         ],
         "factories": [
