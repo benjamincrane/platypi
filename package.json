@@ -53,6 +53,12 @@
                 "type": "viewcontrol",
                 "path": "viewcontrols/register",
                 "registeredName": "register-vc"
+            },
+            {
+                "name": "login",
+                "type": "viewcontrol",
+                "path": "viewcontrols/login",
+                "registeredName": "login-vc"
             }
         ],
         "injectables": [],
