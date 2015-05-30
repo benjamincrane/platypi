@@ -28,7 +28,7 @@ if (process.platform === 'win32') {
     cordovaPlatforms.push('windows');
 } else if (process.platform === 'darwin') {
     cordovaPlatforms.push('ios');
-}
+} else cordovaPlatforms.push('android')
 
 module.exports = function (grunt) {
     var projectFiles = [

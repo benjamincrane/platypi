@@ -9,6 +9,7 @@ var HomeViewControl = require('../viewcontrols/home/home.viewcontrol');
 var RegisterViewControl = require('../viewcontrols/register/register.viewcontrol');
 var LoginViewControl = require('../viewcontrols/login/login.viewcontrol');
 var OrderViewControl = require('../viewcontrols/order/order.viewcontrol');
+var ConfirmationViewControl = require('../viewcontrols/confirmation/confirmation.viewcontrol');
 var App = (function (_super) {
     __extends(App, _super);
     function App(router) {
@@ -17,7 +18,8 @@ var App = (function (_super) {
             { pattern: '', view: HomeViewControl },
             { pattern: '/register', view: RegisterViewControl },
             { pattern: '/login', view: LoginViewControl },
-            { pattern: '/order/:id', view: OrderViewControl }
+            { pattern: '/order/:id', view: OrderViewControl },
+            { pattern: '/confirmation', view: ConfirmationViewControl }
         ]);
     }
     App.prototype.ready = function (ev) {

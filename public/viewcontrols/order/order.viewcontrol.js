@@ -7,6 +7,7 @@ var __extends = this.__extends || function (d, b) {
 var plat = require('platypus');
 var BaseViewControl = require('../base/base.viewcontrol');
 var ProductsService = require('../../services/products/products.service');
+var ConfirmationViewControl = require('../confirmation/confirmation.viewcontrol');
 var OrderViewControl = (function (_super) {
     __extends(OrderViewControl, _super);
     function OrderViewControl(productsService) {
@@ -39,6 +40,14 @@ var OrderViewControl = (function (_super) {
     OrderViewControl.prototype.navigatingFrom = function () {
     };
     OrderViewControl.prototype.dispose = function () {
+    };
+    OrderViewControl.prototype.placeOrder = function () {
+        var _this = this;
+        this.productsService.placeOrder(this.context.order).then(function (success) {
+            _this.navigator.navigate(ConfirmationViewControl);
+        }).catch(function (error) {
+            _this.context.error = error;
+        });
     };
     return OrderViewControl;
 })(BaseViewControl);
